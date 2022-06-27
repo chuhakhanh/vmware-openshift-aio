@@ -16,7 +16,7 @@
     - name: Deploy the openshift software cluster on virtual machines
       copy:  
         src: /root/crc-linux-2.4.1-amd64/crc
-        dest: /usr/local/bin/
+        dest: /usr/local/bin/crc
         remote_src: yes
 
     - name: Setup crc
