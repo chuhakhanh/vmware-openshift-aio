@@ -5,10 +5,27 @@
   become: true
   serial: 4
   tasks:     
-    - name: Deploy the openshift cluster on VMware environment
+    - name: Download crc linux and unarchive
       unarchive:
         src: https://mirror.openshift.com/pub/openshift-v4/clients/crc/latest/crc-linux-amd64.tar.xz
         dest: /root/
         remote_src: yes
         mode: 0644
         validate_certs: no 
+ 
+    - name: Deploy the openshift software cluster on virtual machines
+      copy:  
+        src: /root/crc-linux-amd64/crc
+        dest: /usr/local/bin/
+        remote_src: yes
+
+    - name: Setup crc
+      command:  
+        cmd: crc setup
+      register: crc_setup_result
+
+    - name: crc setup result 
+      local_action: 
+        module: copy 
+        content: "{{ crc_setup_result }}"
+        dest: /var/log/crc_setup_result.log  
