@@ -15,7 +15,7 @@ vms:
    
     networks:
       - name: vlan_111
-        ip: 10.1.17.73
+        ip: 10.1.17.96
         netmask: 255.255.0.0
         gateway: 10.1.0.1
         device_type: vmxnet3
@@ -24,7 +24,7 @@ vms:
         device_type: vmxnet3
 
       - name: vlan_126
-        ip: 192.168.126.73
+        ip: 192.168.126.96
         netmask: 255.255.255.0
         device_type: vmxnet3
 
