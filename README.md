@@ -11,8 +11,8 @@
     ssh-keygen
 ### Setup virtual machines cluster: create, destroy 
 
-    ansible-playbook -i config/inventory setup_lab_openshift.yml action="create"
-    ansible-playbook -i config/inventory setup_lab_openshift.yml action="destroy" 
+    ansible-playbook -i config/inventory setup_lab_openshift.yml -e action="create"
+    ansible-playbook -i config/inventory setup_lab_openshift.yml -e action="destroy" 
     chmod u+x ./script/key_copy.sh; ./script/key_copy.sh config/inventory
     ansible-playbook -i config/inventory prepare_all_node.yml
 
