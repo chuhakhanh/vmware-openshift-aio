@@ -13,10 +13,10 @@
         mode: 0644
         validate_certs: no 
  
-    - name: Deploy the openshift software cluster on virtual machines
+    - name: Copy crc file
       copy:  
         src: /root/crc-linux-2.4.1-amd64/crc
-        dest: /usr/local/bin/crc
+        dest: /usr/local/sbin/crc
         remote_src: yes
 
     - name: Setup crc
