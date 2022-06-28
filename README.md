@@ -1,5 +1,7 @@
 # vmware-openshift-aio
-
+## References
+### Blogs
+    https://www.linuxtechi.com/setup-single-node-openshift-cluster-rhel-8/
 ## Setup
 ### Get data
     git clone https://github.com/chuhakhanh/vmware-openshift-aio
@@ -18,4 +20,9 @@
     
 ### Setup openshift software cluster
     ansible-playbook -i config/inventory setup_openshift_software_cluster.yml
-
+    
+### Setup openshift software cluster    
+    useradd student
+    echo "student  ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/student
+    crc config set skip-check-daemon-systemd-unit true
+    crc config set skip-check-daemon-systemd-sockets true
