@@ -18,6 +18,7 @@
         src: /root/crc-linux-2.4.1-amd64/crc
         dest: /usr/local/sbin/crc
         remote_src: yes
+        mode: 0755
 
     - name: Setup crc
       command:  
