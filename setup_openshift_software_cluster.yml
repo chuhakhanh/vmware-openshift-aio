@@ -22,7 +22,7 @@
 
     - name: Setup crc
       command:  
-        cmd: crc setup
+        cmd: /usr/local/sbin/crc setup
       register: crc_setup_result
 
     - name: crc setup result 
